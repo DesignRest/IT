@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+</head>
+<body>
+	<input type="button" name="" onclick="start();" value="меняем"><hr>
+	<image id="image" src="" style="width:60px;">
+	<hr>
+	<div id="box">
+		<input type="button" name="" onclick="play();" value="Слайдер">
+		<hr>
+		<image id="image1" src="1.gif" style="display: none">
+		<image id="image2" src="2.gif" style="display: none">
+	</div>
+
+	<script type="text/javascript">
+		var a = 0;
+		function image() {
+			if (a==0) {
+				$("#image").attr("src", "3.gif");
+				a = 1;
+			} else {
+				$("#image").attr("src", "4.gif");
+				a = 0;
+			}
+		}
+
+		function start() {
+			setInterval(image, 2000);
+		}
+
+		var b = 0;
+		function slide(){
+			if (b==0) {
+				$("#image1").css("display", "block");
+				$("#image2").css("display", "none");
+				b = 1;
+			} else {
+				$("#image1").css("display", "none");
+				$("#image2").css("display", "block");
+				b = 0;
+			}
+		}
+
+		function play() {
+			setInterval(slide, 2000);
+		}
+	</script>
+</body>
+</html>
